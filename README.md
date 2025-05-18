@@ -46,6 +46,23 @@ La **matrice delle tensioni** mette in evidenza conflitti e sinergie fra queste 
 
 ---
 
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+    <div style="flex: 1; min-width: 30%;">
+        <img src="img/grafico_AI_Distribuita_Sanita_2.jpg" alt="Framework Integrato a Quattro Assi" style="width: 100%;">
+    </div>
+    <div style="flex: 1; min-width: 30%;">
+        <img src="img/grafico_Matrice_Tensioni.jpg" alt="Matrice delle Tensioni e Interdipendenze" style="width: 100%;">
+    </div>
+    <div style="flex: 1; min-width: 30%;">
+        <img src="img/grafico_Radar_Chart.jpg" alt="Value Management nell'AI Distribuita" style="width: 100%;">
+    </div>
+</div>
+
+
+
+
+---
+
 ## Struttura del Sito
 1. **Home** – Introduzione al progetto e al framework  
 2. **Framework** – Visualizzazione interattiva del modello a quattro assi  
