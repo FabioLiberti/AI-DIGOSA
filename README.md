@@ -4,7 +4,7 @@
 
 [![ITAIS 2025](https://img.shields.io/badge/Conference-ITAIS%202025-blue)](https://www.itais.org/conference)
 [![License](https://img.shields.io/badge/License-Mercatorum-green.svg)](LICENSE)
-[![Framework Status](https://img.shields.io/badge/Framework-Multidimensionale-purple.svg)](https://www.itais.org/conference)
+[![Framework Status](https://img.shields.io/badge/Framework-Multidimensionale-orange.svg)](www.fabioliberti.com/ItAIS2025/index.html)
 
 Questo repository contiene il sito web interattivo dedicato al **framework multidimensionale** per l'analisi dell'AI distribuita in sanità, sviluppato per la XXII *Conference of the Italian Chapter of AIS* (ITAIS 2025).
 
@@ -20,6 +20,7 @@ Questo repository contiene il sito web interattivo dedicato al **framework multi
     - [Come contribuire](#come-contribuire)
   - [Conferenza ITAIS 2025](#conferenza-itais2025)
   - [Autori](#autori)
+  - [.......Francesco Avolio.......](#francesco-avolio)
   - [Citazioni](#citazioni)
     - [Pubblicazioni correlate](#pubblicazioni-correlate)
   - [Licenza](#licenza)
@@ -37,7 +38,7 @@ Il framework integra **quattro dimensioni** fondamentali in un modello analitico
 
 | Dimensione | Fattori chiave | Esempi |
 |------------|---------------|--------|
-| **Tecnologica** | Interoperabilità – Sicurezza – Scalabilità – Performance | Standard HL7 FHIR, cifratura dei dati, orchestrazione edge |
+| **Tecnologica** | Interoperabilità – Sicurezza – Scalabilità – Performance | Federated Learning, Standard HL7 FHIR, cifratura dei dati, orchestrazione edge |
 | **Economica** | Costi – Distribuzione del valore – Sostenibilità – Efficienza | Modelli *pay‑per‑use*, analisi costi‑benefici |
 | **Giuridica** | GDPR – AI Act – Tutela diritti – Allocazione responsabilità | Conformità data‑protection, requisiti *high‑risk AI* |
 | **Etica** | Equità algoritmica – Trasparenza – Autonomia – Beneficenza – Fiducia | Audit dei bias, *explainability*, consenso informato |
@@ -107,11 +108,12 @@ Informazioni aggiornate su programma, registrazione e logistica sono disponibili
 
 | Dimensione | Nome / Ente | Competenze | Contributo |
 |------------|-------------|------------|------------|
-| Tecnologica | *[Nome Autore]* – *Università* | Federated Learning, Edge Computing, Interoperabilità | Framework tecnico, analisi sicurezza e resilienza |
-| Economica   | *[Nome Autore]* – *Università* | Value Management, Economia Sanitaria | Analisi costi‑benefici, modelli di sostenibilità |
-| Giuridica   | *[Nome Autore]* – *Università* | Diritto AI, GDPR, Normativa Sanitaria | Analisi quadro normativo, compliance |
-| Etica       | *[Nome Autore]* – *Università* | Etica dell'AI, Bioetica | Analisi bias, autonomia decisionale |
-
+| Tecnologica | *Fabio Liberti* – *Universitas Mercatorum* | Federated Learning, Edge Computing, Interoperabilità | Framework tecnico, analisi sicurezza e scalabilità |
+| Tecnologica | *Franco Maciariello* – *Universitas Mercatorum* | Applied AI, Digital transformation, Interoperabilità | Framework tecnico, analisi digitalizzazione e resilienza |
+| Economica   | *Alfonso ...* – *Universitas Mercatorum* | Value Management, Economia Sanitaria | Analisi costi‑benefici, modelli di sostenibilità |
+| Giuridica   | *Vito ...* – *Universitas Mercatorum* | Diritto AI, GDPR, Normativa Sanitaria | Analisi quadro normativo, compliance |
+| Etica       | *[Nunzia Cosimo]* – *Universitas Mercatorum* | Etica dell'AI, Bioetica | Analisi bias, autonomia decisionale |
+.......Francesco Avolio.......
 ---
 
 ## Citazioni
@@ -129,7 +131,7 @@ Se utilizzi questo framework o i materiali in questo repository, cita:
 ---
 
 ## Licenza
-Questo progetto è distribuito con licenza **MIT**.  
+Questo progetto è distribuito con licenza **Mercatorum**.  
 La licenza MIT consente uso commerciale e non commerciale, modifica, distribuzione e opere derivate, a condizione di mantenere l'avviso di copyright e di licenza nelle copie sostanziali del software.
 
-© 2025 *AI Distribuita e Governance Sanitaria* – Rilasciato sotto [MIT](LICENSE).
+© 2025 *AI Distribuita e Governance Sanitaria* – Rilasciato sotto [Mercatorum](LICENSE).
