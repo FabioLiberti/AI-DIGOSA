@@ -46,16 +46,10 @@ La **matrice delle tensioni** mette in evidenza conflitti e sinergie fra queste 
 
 ---
 
-<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-    <div style="flex: 1; min-width: 30%;">
-        <img src="img/grafico_AI_Distribuita_Sanita_2.jpg" alt="Framework Integrato a Quattro Assi" style="width: 100%;">
-    </div>
-    <div style="flex: 1; min-width: 30%;">
-        <img src="img/grafico_Matrice_Tensioni.jpg" alt="Matrice delle Tensioni e Interdipendenze" style="width: 100%;">
-    </div>
-    <div style="flex: 1; min-width: 30%;">
-        <img src="img/grafico_Radar_Chart.jpg" alt="Value Management nell'AI Distribuita" style="width: 100%;">
-    </div>
+<div align="center">
+  <img src="img/grafico_AI_Distribuita_Sanita_2.jpg" width="32%" />
+  <img src="img/grafico_Matrice_Tensioni.jpg" width="32%" />
+  <img src="img/grafico_Radar_Chart.jpg" width="32%" />
 </div>
 
 
