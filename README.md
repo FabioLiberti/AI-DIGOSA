@@ -6,7 +6,7 @@
 [![Framework Status](https://img.shields.io/badge/Framework-Multidimensionale-orange.svg)](https://www.fabioliberti.com/ItAIS2025/index.html)
 [![License](https://img.shields.io/badge/License-Mercatorum-green.svg)](LICENSE)
 
-Questo repository contiene il sito web interattivo dedicato al **framework multidimensionale [🔍](https://www.fabioliberti.com/ItAIS2025/)** per l'analisi dell'AI distribuita in sanità, sviluppato per la XXII *Conference of the Italian Chapter of AIS* (ITAIS 2025).
+Questo repository contiene il sito web interattivo dedicato al **framework multidimensionale [📊](https://www.fabioliberti.com/ItAIS2025/)** per l'analisi dell'AI distribuita in sanità, sviluppato per la XXII *Conference of the Italian Chapter of AIS* (ITAIS 2025).
 
 ### 📋 Sommario
 - [AI Distribuita e Governance Sanitaria](#ai-distribuita-e-governance-sanitaria)
@@ -20,7 +20,6 @@ Questo repository contiene il sito web interattivo dedicato al **framework multi
     - [Come contribuire](#come-contribuire)
   - [Conferenza ITAIS 2025](#conferenza-itais2025)
   - [Autori](#autori)
-  - [.......Francesco Avolio.......](#francesco-avolio)
   - [Citazioni](#citazioni)
     - [Pubblicazioni correlate](#pubblicazioni-correlate)
   - [Licenza](#licenza)
@@ -108,12 +107,12 @@ Informazioni aggiornate su programma, registrazione e logistica sono disponibili
 
 | Dimensione | Nome / Ente | Competenze | Contributo |
 |------------|-------------|------------|------------|
-| Tecnologica | *Fabio Liberti* – *Universitas Mercatorum* | Federated Learning, Edge Computing, Interoperabilità | Framework tecnico, analisi sicurezza e scalabilità |
-| Tecnologica | *Franco Maciariello* – *Universitas Mercatorum* | Applied AI, Digital transformation, Interoperabilità | Framework tecnico, analisi digitalizzazione e resilienza |
-| Economica   | *Alfonso ...* – *Universitas Mercatorum* | Value Management, Economia Sanitaria | Analisi costi‑benefici, modelli di sostenibilità |
-| Giuridica   | *Vito ...* – *Universitas Mercatorum* | Diritto AI, GDPR, Normativa Sanitaria | Analisi quadro normativo, compliance |
+| Tecnologica | *Fabio Liberti*, *Universitas Mercatorum* | Federated Learning, Edge Computing, Interoperabilità | Framework tecnico, analisi sicurezza e scalabilità |
+| Tecnologica | *Franco Maciariello*, *Universitas Mercatorum* | Applied AI, Digital transformation, Interoperabilità | Framework tecnico, analisi digitalizzazione e resilienza |
+| Economica   | *Alfonso ... e Fracesco Avolio*, *Universitas Mercatorum* | Value Management, Economia Sanitaria | Analisi costi‑benefici, modelli di sostenibilità |
+| Giuridica   | *Vito ...*, *Universitas Mercatorum* | Diritto AI, GDPR, Normativa Sanitaria | Analisi quadro normativo, compliance |
 | Etica       | *[Nunzia Cosimo]* – *Universitas Mercatorum* | Etica dell'AI, Bioetica | Analisi bias, autonomia decisionale |
-.......Francesco Avolio.......
+
 ---
 
 ## Citazioni
