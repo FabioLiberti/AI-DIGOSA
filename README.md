@@ -3,10 +3,10 @@
 ## Framework Multidimensionale per l'Analisi delle Tensioni tra Norme, Etica e Innovazione
 
 [![ITAIS 2025](https://img.shields.io/badge/Conference-ITAIS%202025-blue)](https://www.itais.org/conference)
+[![Framework Status](https://img.shields.io/badge/Framework-Multidimensionale-orange.svg)](https://www.fabioliberti.com/ItAIS2025/index.html)
 [![License](https://img.shields.io/badge/License-Mercatorum-green.svg)](LICENSE)
-[![Framework Status](https://img.shields.io/badge/Framework-Multidimensionale-orange.svg)](www.fabioliberti.com/ItAIS2025/index.html)
 
-Questo repository contiene il sito web interattivo dedicato al **framework multidimensionale** per l'analisi dell'AI distribuita in sanità, sviluppato per la XXII *Conference of the Italian Chapter of AIS* (ITAIS 2025).
+Questo repository contiene il sito web interattivo dedicato al **framework multidimensionale [🔍](https://www.fabioliberti.com/ItAIS2025/)** per l'analisi dell'AI distribuita in sanità, sviluppato per la XXII *Conference of the Italian Chapter of AIS* (ITAIS 2025).
 
 ### 📋 Sommario
 - [AI Distribuita e Governance Sanitaria](#ai-distribuita-e-governance-sanitaria)
