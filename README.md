@@ -131,6 +131,6 @@ Se utilizzi questo framework o i materiali in questo repository, cita:
 
 ## Licenza
 Questo progetto è distribuito con licenza **Mercatorum**.  
-La licenza MIT consente uso commerciale e non commerciale, modifica, distribuzione e opere derivate, a condizione di mantenere l'avviso di copyright e di licenza nelle copie sostanziali del software.
+La licenza Mercatorum consente uso commerciale e non commerciale, modifica, distribuzione e opere derivate, a condizione di mantenere l'avviso di copyright e di licenza nelle copie sostanziali del software.
 
 © 2025 *AI Distribuita e Governance Sanitaria* – Rilasciato sotto [Mercatorum](LICENSE).
