@@ -65,9 +65,10 @@ La **matrice delle tensioni** mette in evidenza conflitti e sinergie fra queste 
 1. **Home** – Introduzione al progetto e al framework  
 2. **Framework** – Visualizzazione interattiva del modello a quattro assi  
 3. **Dimensioni** – Approfondimenti su ciascun asse  
-4. **Tensioni** – Matrice interattiva delle tensioni  
-5. **Casi di Studio** – Applicazioni pratiche del framework  
-6. **Risorse** – Pubblicazioni, strumenti e materiali di riferimento  
+4. **Value Management** – Approfondimenti su dimensioni di valore e potenziale trasformativo  
+5. **Tensioni** – Matrice interattiva delle tensioni  
+6. **Casi di Studio** – Applicazioni pratiche del framework  
+7. **Risorse** – Pubblicazioni, strumenti e materiali di riferimento  
 
 ---
 
@@ -122,8 +123,9 @@ Informazioni aggiornate su programma, registrazione e logistica sono disponibili
 
 | Dimensione | Nome / Ente | Competenze | Contributo |
 |------------|-------------|------------|------------|
-| Tecnologica | *Fabio Liberti*, *Universitas Mercatorum* | Federated Learning, Edge Computing, Interoperabilità | Framework tecnologico, analisi sicurezza e scalabilità |
-| Tecnologica | *Franco Maciariello*, *Universitas Mercatorum* | Applied AI, Digital transformation, Interoperabilità | Framework tecnologico e analisi digitalizzazione |
+| Tecnologica | *Fabio Liberti*, *Universitas Mercatorum* | Federated Learning, Edge Computing, Informatica Sanitaria | Framework tecnologico, analisi sicurezza e scalabilità |
+| Tecnologica | *Franco Maciariello*, *Universitas Mercatorum* | Applied AI, Digital transformation, Interoperabilità | Analisi digitalizzazione |
+| Tecnologica | *Vittorio Stile*, *Universitas Mercatorum* | Digital transformation, Blockchain, UX Designer | Analisi sicurezza |
 | Economica   | *Fracesco Avolio*, *Universitas Mercatorum* | Value Management, Economia Sanitaria | Analisi costi‑benefici, modelli di sostenibilità |
 | Giuridica   | *Alfonso Laudonia e Vito ...*, *Universitas Mercatorum* | Diritto AI, GDPR, Normativa Sanitaria | Analisi quadro normativo, compliance |
 | Etica       | *Nunzia Cosimo* – *Universitas Mercatorum* | Etica dell'AI, Bioetica | Analisi bias, autonomia decisionale |
