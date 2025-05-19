@@ -42,22 +42,17 @@ body {
 .matrix-cell {
     cursor: pointer;
     transition: all 0.2s ease;
+    position: relative;
 }
 
-.matrix-cell:hover {
-    transform: scale(1.05);
-    z-index: 10;
+.matrix-cell:hover, .matrix-cell.active {
+    background-color: rgba(243, 244, 246, 0.8);
+    transform: scale(1.02);
+    z-index: 5;
 }
 
 .matrix-info {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.matrix-cell:hover .matrix-info {
-    opacity: 1;
-    pointer-events: auto;
+    display: none;
 }
 
 .nav-link {
@@ -176,6 +171,85 @@ body {
     border: 1px solid #e5e7eb;
 }
 
+/* Sezione dettaglio matrice */
+#matrix-detail-panel {
+    transition: all 0.3s ease;
+    height: fit-content;
+}
+
+/* Categorie di tensioni */
+.category-tech-economy {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #3B82F6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.category-tech-legal {
+    background-color: rgba(249, 115, 22, 0.1);
+    color: #F97316;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.category-tech-ethics {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: #8B5CF6;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.category-economy-tech {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.category-economy-legal {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.category-economy-ethics {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.category-legal-tech {
+    background-color: rgba(249, 115, 22, 0.1);
+    color: #F97316;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.category-legal-economy {
+    background-color: rgba(249, 115, 22, 0.1);
+    color: #F97316;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.category-legal-ethics {
+    background-color: rgba(249, 115, 22, 0.1);
+    color: #F97316;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.category-ethics-tech {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: #8B5CF6;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.category-ethics-economy {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: #8B5CF6;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.category-ethics-legal {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: #8B5CF6;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
 /* Team Member Cards */
 .team-member-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -224,12 +298,66 @@ body {
         height: 300px;
     }
     
+    /* Aumenta dimensioni della matrice */
     .matrix-cell, .matrix-header {
-        width: 100px;
+        width: 180px; /* Aumentato da 150px */
     }
-    
+
+    /* .matrix-cell {
+        height: 180px; /* Aumentato da 150px */
+        padding: 12px; /* Padding maggiore */
+        font-size: 1rem; /* Testo leggermente più grande */
+    /* } */
+
+
     .matrix-cell {
-        height: 100px;
-        font-size: 0.7rem;
+        width: 180px;  /* Da 150px a 180px */
+        height: 180px; /* Da 150px a 180px */
+        padding: 12px; /* Da 10px a 12px */
     }
+
+    .matrix-header {
+        width: 180px;  /* Da 150px a 180px */
+    }
+
+
+
+
+
+
+    /* Stili per etichette categoriche colorate */
+    .category-tech {
+        background-color: rgba(59, 130, 246, 0.1);
+        color: #3B82F6;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .category-economy {
+        background-color: rgba(16, 185, 129, 0.1);
+        color: #10B981;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .category-legal {
+        background-color: rgba(249, 115, 22, 0.1);
+        color: #F97316;
+        border: 1px solid rgba(249, 115, 22, 0.3);
+    }
+
+    .category-ethics {
+        background-color: rgba(139, 92, 246, 0.1);
+        color: #8B5CF6;
+        border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    /* Miglioramenti alla matrice */
+    .matrix-cell.active {
+        box-shadow: 0 0 0 2px #3B82F6;
+        z-index: 10;
+    }
+
+    .matrix-diagonal {
+        cursor: pointer;
+    }
+
 }

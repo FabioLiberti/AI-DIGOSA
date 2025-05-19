@@ -482,211 +482,241 @@
             <h2 class="text-3xl font-bold text-center mb-4">Matrice delle Tensioni</h2>
             <p class="text-lg text-center mb-12 max-w-3xl mx-auto">Il framework visualizza le tensioni tra dimensioni, evidenziando potenziali conflitti e sinergie che richiedono un approccio di governance bilanciato</p>
             
-            <div class="overflow-x-auto">
-                <div class="min-w-max">
-                    <!-- First Row (Headers) -->
-                    <div class="matrix-row">
-                        <div class="matrix-header bg-white"></div>
-                        <div class="matrix-header bg-blue-100 text-blue-800">Tecnologia</div>
-                        <div class="matrix-header bg-green-100 text-green-800">Economia</div>
-                        <div class="matrix-header bg-orange-100 text-orange-800">Diritto</div>
-                        <div class="matrix-header bg-purple-100 text-purple-800">Etica</div>
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Matrice (lato sinistro) -->
+                <div class="lg:w-3/4 overflow-x-auto">
+                    <div class="min-w-max">
+                        <!-- Prima riga (intestazioni) -->
+                        <div class="matrix-row">
+                            <div class="matrix-header bg-white"></div>
+                            <div class="matrix-header bg-blue-100 text-blue-800">Tecnologia</div>
+                            <div class="matrix-header bg-green-100 text-green-800">Economia</div>
+                            <div class="matrix-header bg-orange-100 text-orange-800">Diritto</div>
+                            <div class="matrix-header bg-purple-100 text-purple-800">Etica</div>
+                        </div>
+                        
+                        <!-- Technology Row -->
+                        <div class="matrix-row">
+                            <div class="matrix-header bg-blue-100 text-blue-800">Tecnologia</div>
+                            
+                            <!-- Tech-Tech (Diagonal) -->
+                            <div class="matrix-cell matrix-diagonal">
+                                <ul class="text-xs list-disc pl-4">
+                                    <li>Interoperabilità</li>
+                                    <li>Sicurezza</li>
+                                    <li>Scalabilità</li>
+                                    <li>Performance</li>
+                                    <li>Resilienza</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Tech-Economy -->
+                            <div class="matrix-cell" 
+                                data-title="Tensione Tecnologia-Economia"
+                                data-description="L'implementazione di meccanismi avanzati di sicurezza come differential privacy può comportare costi aggiuntivi e complessità che devono essere giustificati dal valore generato. Bilanciare performance algoritmica massimale e efficienza nell'uso delle risorse richiede compromessi e ottimizzazioni continue."
+                                data-category="tech-economy"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Tech-Economia</h4>
+                                <p class="text-xs text-gray-600">Tensione tra sicurezza ottimale e costi sostenibili</p>
+                            </div>
+                            
+                            <!-- Tech-Legal -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Tecnologia-Diritto"
+                                data-description="Le architetture tecniche devono navigare vincoli normativi potenzialmente contrastanti, come quelli tra minimizzazione dei dati e requisiti di documentazione. La necessità di tracciabilità algoritmica dell'AI Act può entrare in conflitto con il design distribuito e privacy-preserving del federated learning."
+                                data-category="tech-legal"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Tech-Diritto</h4>
+                                <p class="text-xs text-gray-600">Tensione tra innovazione tecnica e compliance normativa</p>
+                            </div>
+                            
+                            <!-- Tech-Ethics -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Tecnologia-Etica"
+                                data-description="Modelli più complessi e performanti possono risultare meno interpretabili, creando difficoltà nel garantire trasparenza e accountability. L'ottimizzazione per efficienza computazionale può talvolta compromettere l'equità algoritmica, richiedendo meccanismi specifici di monitoraggio e mitigazione dei bias."
+                                data-category="tech-ethics"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Tech-Etica</h4>
+                                <p class="text-xs text-gray-600">Tensione tra performance e trasparenza/spiegabilità</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Economy Row -->
+                        <div class="matrix-row">
+                            <div class="matrix-header bg-green-100 text-green-800">Economia</div>
+                            
+                            <!-- Economy-Tech -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Economia-Tecnologia"
+                                data-description="Gli investimenti in infrastrutture avanzate richiedono giustificazioni basate sul valore, con timeframe spesso divergenti tra costi immediati e benefici a lungo termine. La distribuzione ineguale di risorse tecniche tra istituzioni crea sfide nella partecipazione equa a iniziative di AI distribuita."
+                                data-category="economy-tech"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Economia-Tech</h4>
+                                <p class="text-xs text-gray-600">Tensione tra investimento in innovazione e ritorno economico</p>
+                            </div>
+                            
+                            <!-- Economy-Economy (Diagonal) -->
+                            <div class="matrix-cell matrix-diagonal">
+                                <ul class="text-xs list-disc pl-4">
+                                    <li>Costi</li>
+                                    <li>Distribuzione valore</li>
+                                    <li>Sostenibilità</li>
+                                    <li>Efficienza</li>
+                                    <li>ROI</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Economy-Legal -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Economia-Diritto"
+                                data-description="I costi di compliance possono influenzare significativamente la fattibilità economica delle iniziative di AI distribuita, creando potenziali barriere all'ingresso per istituzioni con risorse limitate. Vincoli normativi sull'uso secondario dei dati possono limitare il potenziale di monetizzazione e la sostenibilità economica di alcuni modelli collaborativi."
+                                data-category="economy-legal"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Economia-Diritto</h4>
+                                <p class="text-xs text-gray-600">Tensione tra modelli di business e vincoli normativi</p>
+                            </div>
+                            
+                            <!-- Economy-Ethics -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Economia-Etica"
+                                data-description="La massimizzazione dell'efficienza può talvolta confliggere con obiettivi di inclusività e giustizia distributiva. L'imperativo economico di generare valore può entrare in tensione con principi etici di equa distribuzione dei benefici tra stakeholder."
+                                data-category="economy-ethics"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Economia-Etica</h4>
+                                <p class="text-xs text-gray-600">Tensione tra ottimizzazione costi ed equità nell'accesso</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Legal Row -->
+                        <div class="matrix-row">
+                            <div class="matrix-header bg-orange-100 text-orange-800">Diritto</div>
+                            
+                            <!-- Legal-Tech -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Diritto-Tecnologia"
+                                data-description="L'evoluzione normativa può richiedere adattamenti tecnici che influenzano architetture esistenti, creando sfide di compatibilità e aggiornamento. L'allocazione di responsabilità legali in architetture distribuite solleva complesse questioni tecniche su tracciabilità e accountability."
+                                data-category="legal-tech"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Diritto-Tech</h4>
+                                <p class="text-xs text-gray-600">Tensione tra requisiti normativi e implementazione tecnica</p>
+                            </div>
+                            
+                            <!-- Legal-Economy -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Diritto-Economia"
+                                data-description="Requisiti normativi per documentazione estesa possono aumentare i costi operativi e amministrativi, influenzando la sostenibilità economica delle iniziative. La stratificazione normativa in diversi contesti geografici può creare inefficienze e duplicazioni di conformità, con impatti sui costi e sulla scalabilità."
+                                data-category="legal-economy"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Diritto-Economia</h4>
+                                <p class="text-xs text-gray-600">Tensione tra requisiti di documentazione ed efficienza</p>
+                            </div>
+                            
+                            <!-- Legal-Legal (Diagonal) -->
+                            <div class="matrix-cell matrix-diagonal">
+                                <ul class="text-xs list-disc pl-4">
+                                    <li>Conformità</li>
+                                    <li>Responsabilità</li>
+                                    <li>Tutela diritti</li>
+                                    <li>Gestione controversie</li>
+                                    <li>Adattabilità</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Legal-Ethics -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Diritto-Etica"
+                                data-description="I requisiti legali possono non catturare pienamente le aspettative etiche e sociali, creando tensioni tra compliance tecnica e legittimità percepita. La formalizzazione di principi etici in requisiti legali può ridurre la ricchezza e contestualità delle considerazioni etiche a liste di controllo formali."
+                                data-category="legal-ethics"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Diritto-Etica</h4>
+                                <p class="text-xs text-gray-600">Tensione tra conformità formale e responsabilità sostanziale</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Ethics Row -->
+                        <div class="matrix-row">
+                            <div class="matrix-header bg-purple-100 text-purple-800">Etica</div>
+                            
+                            <!-- Ethics-Tech -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Etica-Tecnologia"
+                                data-description="La ricerca di innovazione tecnologica può sfidare valori morali tradizionali, richiedendo continua riflessione etica sulle implicazioni di nuove capacità. Gli imperativi etici di spiegabilità e comprensibilità possono limitare l'adozione di tecniche avanzate ma opache, creando tensioni tra performance e trasparenza."
+                                data-category="ethics-tech"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Etica-Tech</h4>
+                                <p class="text-xs text-gray-600">Tensione tra innovazione e principi morali fondamentali</p>
+                            </div>
+                            
+                            <!-- Ethics-Economy -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Etica-Economia"
+                                data-description="Imperativi etici di equità e inclusività possono richiedere investimenti aggiuntivi che sfidano logiche di pura efficienza economica. La prioritizzazione di benefici collettivi a lungo termine può entrare in tensione con pressioni per risultati economici immediati."
+                                data-category="ethics-economy"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Etica-Economia</h4>
+                                <p class="text-xs text-gray-600">Tensione tra valori morali e imperativo economico</p>
+                            </div>
+                            
+                            <!-- Ethics-Legal -->
+                            <div class="matrix-cell"
+                                data-title="Tensione Etica-Diritto"
+                                data-description="Aspirazioni etiche possono superare requisiti legali minimi, creando tensioni tra conformità normativa formale e legittimità morale percepita. La stratificazione normativa può creare ambiguità interpretative che richiedono giudizio etico per navigare contesti complessi."
+                                data-category="ethics-legal"
+                                onclick="showMatrixDetail(this)">
+                                <h4 class="font-semibold text-sm mb-1">Etica-Diritto</h4>
+                                <p class="text-xs text-gray-600">Tensione tra principi morali e vincoli legali formali</p>
+                            </div>
+                            
+                            <!-- Ethics-Ethics (Diagonal) -->
+                            <div class="matrix-cell matrix-diagonal">
+                                <ul class="text-xs list-disc pl-4">
+                                    <li>Equità</li>
+                                    <li>Trasparenza</li>
+                                    <li>Autonomia</li>
+                                    <li>Beneficenza</li>
+                                    <li>Fiducia</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sezione di dettaglio (lato destro) -->
+                <div class="lg:w-1/4 bg-white rounded-lg p-6 shadow-md sticky top-24 h-fit" id="matrix-detail-panel">
+                    <div id="default-detail" class="text-center py-12">
+                        <svg class="w-16 h-16 mx-auto text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <p class="mt-4 text-gray-500">Seleziona una tensione dalla matrice per visualizzare i dettagli</p>
                     </div>
                     
-                    <!-- Technology Row -->
-                    <div class="matrix-row">
-                        <div class="matrix-header bg-blue-100 text-blue-800">Tecnologia</div>
-                        
-                        <!-- Tech-Tech (Diagonal) -->
-                        <div class="matrix-cell matrix-diagonal">
-                            <ul class="text-xs list-disc pl-4">
-                                <li>Interoperabilità</li>
-                                <li>Sicurezza</li>
-                                <li>Scalabilità</li>
-                                <li>Performance</li>
-                                <li>Resilienza</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Tech-Economy -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Tech-Economia</h4>
-                            <p class="text-xs text-gray-600">Tensione tra sicurezza ottimale e costi sostenibili</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-blue-800">Tensione Tecnologia-Economia</h4>
-                                <p class="text-sm mt-2">L'implementazione di meccanismi avanzati di sicurezza come differential privacy può comportare costi aggiuntivi e complessità che devono essere giustificati dal valore generato.</p>
-                                <p class="text-sm mt-2">Bilanciare performance algoritmica massimale e efficienza nell'uso delle risorse richiede compromessi e ottimizzazioni continue.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Tech-Legal -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Tech-Diritto</h4>
-                            <p class="text-xs text-gray-600">Tensione tra innovazione tecnica e compliance normativa</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-blue-800">Tensione Tecnologia-Diritto</h4>
-                                <p class="text-sm mt-2">Le architetture tecniche devono navigare vincoli normativi potenzialmente contrastanti, come quelli tra minimizzazione dei dati e requisiti di documentazione.</p>
-                                <p class="text-sm mt-2">La necessità di tracciabilità algoritmica dell'AI Act può entrare in conflitto con il design distribuito e privacy-preserving del federated learning.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Tech-Ethics -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Tech-Etica</h4>
-                            <p class="text-xs text-gray-600">Tensione tra performance e trasparenza/spiegabilità</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-blue-800">Tensione Tecnologia-Etica</h4>
-                                <p class="text-sm mt-2">Modelli più complessi e performanti possono risultare meno interpretabili, creando difficoltà nel garantire trasparenza e accountability.</p>
-                                <p class="text-sm mt-2">L'ottimizzazione per efficienza computazionale può talvolta compromettere l'equità algoritmica, richiedendo meccanismi specifici di monitoraggio e mitigazione dei bias.</p>
-                            </div>
-                        </div>
+                    <div id="detail-content" class="hidden">
+                        <h3 id="detail-title" class="text-xl font-bold mb-4">Titolo Tensione</h3>
+                        <div id="detail-category" class="inline-block px-3 py-1 rounded-full text-sm font-medium mb-4">Categoria</div>
+                        <p id="detail-description" class="text-gray-700">Descrizione dettagliata della tensione...</p>
                     </div>
-                    
-                    <!-- Economy Row -->
-                    <div class="matrix-row">
-                        <div class="matrix-header bg-green-100 text-green-800">Economia</div>
-                        
-                        <!-- Economy-Tech -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Economia-Tech</h4>
-                            <p class="text-xs text-gray-600">Tensione tra investimento in innovazione e ritorno economico</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-green-800">Tensione Economia-Tecnologia</h4>
-                                <p class="text-sm mt-2">Gli investimenti in infrastrutture avanzate richiedono giustificazioni basate sul valore, con timeframe spesso divergenti tra costi immediati e benefici a lungo termine.</p>
-                                <p class="text-sm mt-2">La distribuzione ineguale di risorse tecniche tra istituzioni crea sfide nella partecipazione equa a iniziative di AI distribuita.</p>
+                    <!-- Elemento grafico di tensione -->
+                    <div id="tension-visualization" class="mt-6 p-4 bg-white rounded-lg shadow-sm border border-gray-200 hidden">
+                        <h4 class="text-gray-700 font-medium mb-3">Visualizzazione della Tensione</h4>
+                        <div class="relative h-24 w-full">
+                            <!-- Grafico di tensione dinamico -->
+                            <div class="absolute inset-0 flex items-center justify-between">
+                                <div id="tension-left" class="w-20 h-20 rounded-full flex items-center justify-center text-white font-medium">
+                                    Tech
+                                </div>
+                                <div class="flex-1 mx-4 relative">
+                                    <div class="h-2 bg-gray-200 rounded-full"></div>
+                                    <div id="tension-line" class="absolute top-0 left-0 h-2 bg-blue-500 rounded-full" style="width: 50%"></div>
+                                    <div id="tension-indicator" class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-600 rounded-full"></div>
+                                </div>
+                                <div id="tension-right" class="w-20 h-20 rounded-full flex items-center justify-center text-white font-medium">
+                                    Econ
+                                </div>
                             </div>
                         </div>
-                        
-                        <!-- Economy-Economy (Diagonal) -->
-                        <div class="matrix-cell matrix-diagonal">
-                            <ul class="text-xs list-disc pl-4">
-                                <li>Costi</li>
-                                <li>Distribuzione valore</li>
-                                <li>Sostenibilità</li>
-                                <li>Efficienza</li>
-                                <li>ROI</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Economy-Legal -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Economia-Diritto</h4>
-                            <p class="text-xs text-gray-600">Tensione tra modelli di business e vincoli normativi</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-green-800">Tensione Economia-Diritto</h4>
-                                <p class="text-sm mt-2">I costi di compliance possono influenzare significativamente la fattibilità economica delle iniziative di AI distribuita, creando potenziali barriere all'ingresso per istituzioni con risorse limitate.</p>
-                                <p class="text-sm mt-2">Vincoli normativi sull'uso secondario dei dati possono limitare il potenziale di monetizzazione e la sostenibilità economica di alcuni modelli collaborativi.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Economy-Ethics -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Economia-Etica</h4>
-                            <p class="text-xs text-gray-600">Tensione tra ottimizzazione costi ed equità nell'accesso</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-green-800">Tensione Economia-Etica</h4>
-                                <p class="text-sm mt-2">La massimizzazione dell'efficienza può talvolta confliggere con obiettivi di inclusività e giustizia distributiva.</p>
-                                <p class="text-sm mt-2">L'imperativo economico di generare valore può entrare in tensione con principi etici di equa distribuzione dei benefici tra stakeholder.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Legal Row -->
-                    <div class="matrix-row">
-                        <div class="matrix-header bg-orange-100 text-orange-800">Diritto</div>
-                        
-                        <!-- Legal-Tech -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Diritto-Tech</h4>
-                            <p class="text-xs text-gray-600">Tensione tra requisiti normativi e implementazione tecnica</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-orange-800">Tensione Diritto-Tecnologia</h4>
-                                <p class="text-sm mt-2">L'evoluzione normativa può richiedere adattamenti tecnici che influenzano architetture esistenti, creando sfide di compatibilità e aggiornamento.</p>
-                                <p class="text-sm mt-2">L'allocazione di responsabilità legali in architetture distribuite solleva complesse questioni tecniche su tracciabilità e accountability.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Legal-Economy -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Diritto-Economia</h4>
-                            <p class="text-xs text-gray-600">Tensione tra requisiti di documentazione ed efficienza</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-orange-800">Tensione Diritto-Economia</h4>
-                                <p class="text-sm mt-2">Requisiti normativi per documentazione estesa possono aumentare i costi operativi e amministrativi, influenzando la sostenibilità economica delle iniziative.</p>
-                                <p class="text-sm mt-2">La stratificazione normativa in diversi contesti geografici può creare inefficienze e duplicazioni di conformità, con impatti sui costi e sulla scalabilità.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Legal-Legal (Diagonal) -->
-                        <div class="matrix-cell matrix-diagonal">
-                            <ul class="text-xs list-disc pl-4">
-                                <li>Conformità</li>
-                                <li>Responsabilità</li>
-                                <li>Tutela diritti</li>
-                                <li>Gestione controversie</li>
-                                <li>Adattabilità</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Legal-Ethics -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Diritto-Etica</h4>
-                            <p class="text-xs text-gray-600">Tensione tra conformità formale e responsabilità sostanziale</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-orange-800">Tensione Diritto-Etica</h4>
-                                <p class="text-sm mt-2">I requisiti legali possono non catturare pienamente le aspettative etiche e sociali, creando tensioni tra compliance tecnica e legittimità percepita.</p>
-                                <p class="text-sm mt-2">La formalizzazione di principi etici in requisiti legali può ridurre la ricchezza e contestualità delle considerazioni etiche a liste di controllo formali.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Ethics Row -->
-                    <div class="matrix-row">
-                        <div class="matrix-header bg-purple-100 text-purple-800">Etica</div>
-                        
-                        <!-- Ethics-Tech -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Etica-Tech</h4>
-                            <p class="text-xs text-gray-600">Tensione tra innovazione e principi morali fondamentali</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-purple-800">Tensione Etica-Tecnologia</h4>
-                                <p class="text-sm mt-2">La ricerca di innovazione tecnologica può sfidare valori morali tradizionali, richiedendo continua riflessione etica sulle implicazioni di nuove capacità.</p>
-                                <p class="text-sm mt-2">Gli imperativi etici di spiegabilità e comprensibilità possono limitare l'adozione di tecniche avanzate ma opache, creando tensioni tra performance e trasparenza.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Ethics-Economy -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Etica-Economia</h4>
-                            <p class="text-xs text-gray-600">Tensione tra valori morali e imperativo economico</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-purple-800">Tensione Etica-Economia</h4>
-                                <p class="text-sm mt-2">Imperativi etici di equità e inclusività possono richiedere investimenti aggiuntivi che sfidano logiche di pura efficienza economica.</p>
-                                <p class="text-sm mt-2">La prioritizzazione di benefici collettivi a lungo termine può entrare in tensione con pressioni per risultati economici immediati.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Ethics-Legal -->
-                        <div class="matrix-cell">
-                            <h4 class="font-semibold text-sm mb-1">Etica-Diritto</h4>
-                            <p class="text-xs text-gray-600">Tensione tra principi morali e vincoli legali formali</p>
-                            <div class="matrix-info absolute inset-0 bg-white bg-opacity-95 p-3 rounded shadow-lg">
-                                <h4 class="font-bold text-purple-800">Tensione Etica-Diritto</h4>
-                                <p class="text-sm mt-2">Aspirazioni etiche possono superare requisiti legali minimi, creando tensioni tra conformità normativa formale e legittimità morale percepita.</p>
-                                <p class="text-sm mt-2">La stratificazione normativa può creare ambiguità interpretative che richiedono giudizio etico per navigare contesti complessi.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Ethics-Ethics (Diagonal) -->
-                        <div class="matrix-cell matrix-diagonal">
-                            <ul class="text-xs list-disc pl-4">
-                                <li>Equità</li>
-                                <li>Trasparenza</li>
-                                <li>Autonomia</li>
-                                <li>Beneficenza</li>
-                                <li>Fiducia</li>
-                            </ul>
-                        </div>
+                        <p id="tension-description" class="mt-3 text-sm text-gray-600 text-center">
+                            Questa tensione richiede un bilanciamento tra sicurezza ottimale e sostenibilità dei costi.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1375,5 +1405,6 @@
         window.addEventListener('scroll', animateSections);
         animateSections(); // Run once on page load
     </script>
+    <script src="matrix-detail.js"></script>
 </body>
 </html>
