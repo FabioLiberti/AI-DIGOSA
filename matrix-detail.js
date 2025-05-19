@@ -1,4 +1,14 @@
 /**
+ * Definizione delle spiegazioni testuali per ciascun asse
+ */
+const axisExplanations = {
+    'tech': "Questi elementi costituiscono i pilastri tecnici per un'implementazione efficace dell'AI distribuita, garantendo comunicazione tra sistemi eterogenei, protezione da attacchi informatici, capacità di adattamento a volumi crescenti di dati, efficienza computazionale e continuità operativa anche in condizioni avverse.",
+    'economy': "Questi elementi rappresentano le dimensioni economiche critiche dell'AI distribuita, contemplando investimenti iniziali, distribuzione equa dei benefici tra stakeholder, sostenibilità finanziaria a lungo termine, ottimizzazione delle risorse e misurazione concreta del ritorno sugli investimenti.",
+    'legal': "Questi elementi definiscono il quadro normativo dell'AI distribuita in sanità, includendo l'aderenza alle leggi vigenti, l'attribuzione chiara di obblighi legali, la protezione dei diritti fondamentali, meccanismi di risoluzione dei conflitti e adattabilità all'evoluzione del panorama regolatorio.",
+    'ethics': "Questi elementi rappresentano i principi cardine che guidano il giudizio morale nell'implementazione dell'AI distribuita, bilanciando equità algoritmica, trasparenza nei processi decisionali, autonomia degli attori coinvolti, beneficenza verso i pazienti e costruzione di rapporti fiduciari tra istituzioni e individui."
+};
+
+/**
  * Inizializza la visualizzazione del dettaglio al caricamento della pagina
  * Verifica la presenza di un hash nell'URL per mostrare una cella specifica
  */
@@ -32,7 +42,7 @@ function showMatrixDetail(cell) {
     // Ottieni i dati dalla cella
     const title = cell.getAttribute('data-title');
     const description = cell.getAttribute('data-description');
-    const category = cell.getAttribute('data-category');
+    const category = cell.getAttribute('data-category') || '';
     
     // Verifica se è una cella diagonale
     const isDiagonal = cell.classList.contains('matrix-diagonal');
@@ -41,7 +51,6 @@ function showMatrixDetail(cell) {
     document.getElementById('default-detail').classList.add('hidden');
     document.getElementById('detail-content').classList.remove('hidden');
     document.getElementById('detail-title').textContent = title;
-    document.getElementById('detail-description').textContent = description;
     
     // Ottieni il pannello di dettaglio
     const detailPanel = document.getElementById('matrix-detail-panel');
@@ -55,6 +64,24 @@ function showMatrixDetail(cell) {
         // Colora il pannello di azzurro simile alle celle diagonali
         detailPanel.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
         detailPanel.classList.add('border-blue-200');
+        
+        // Determina quale asse è stato selezionato
+        let axisDimension = '';
+        if (category && category.includes('-')) {
+            axisDimension = category.split('-')[0];
+        } else {
+            // Se la categoria non contiene un trattino, estrai dall'ID
+            const cellId = cell.id || '';
+            if (cellId.includes('-')) {
+                axisDimension = cellId.split('-')[0];
+            }
+        }
+        
+        // Ottieni la spiegazione testuale corrispondente all'asse
+        const axisExplanation = axisExplanations[axisDimension] || description;
+        
+        // Aggiorna la descrizione con la spiegazione testuale
+        document.getElementById('detail-description').textContent = axisExplanation;
         
         // Crea un elemento per i punti elenco se non esiste
         if (!document.getElementById('detail-list-container')) {
@@ -84,11 +111,14 @@ function showMatrixDetail(cell) {
             listContainer.classList.remove('hidden');
         }
     } else {
-        // Se non è una cella diagonale, nascondi il container dei punti elenco
+        // Se non è una cella diagonale, nascondi il container dei punti elenco e mostra la descrizione originale
         const listContainer = document.getElementById('detail-list-container');
         if (listContainer) {
             listContainer.classList.add('hidden');
         }
+        
+        // Per le celle non diagonali, mostra la descrizione originale
+        document.getElementById('detail-description').textContent = description;
     }
     
     // Aggiorna le etichette di categoria nel pannello laterale
@@ -126,7 +156,17 @@ function updateCategoryLabels(category, isDiagonal) {
     
     if (isDiagonal) {
         // Per celle diagonali, mostra una singola etichetta
-        const dimension = category.split('-')[0];
+        let dimension = '';
+        if (category && category.includes('-')) {
+            dimension = category.split('-')[0];
+        } else {
+            // Se non abbiamo una categoria valida, cerchiamo di estrarre dall'ID della cella
+            const cellId = document.querySelector('.matrix-cell.active')?.id || '';
+            if (cellId.includes('-')) {
+                dimension = cellId.split('-')[0];
+            }
+        }
+        
         const dimensionName = translateDimension(dimension);
         
         categoryContainer.innerHTML = `
@@ -134,9 +174,9 @@ function updateCategoryLabels(category, isDiagonal) {
                 ${dimensionName}
             </div>
         `;
-    } else {
+    } else if (category && category.includes('-')) {
         // Per celle di tensione, estrai le due dimensioni
-        const [dim1, dim2] = category ? category.split('-') : ['', ''];
+        const [dim1, dim2] = category.split('-');
         const dim1Name = translateDimension(dim1);
         const dim2Name = translateDimension(dim2);
         
@@ -149,6 +189,9 @@ function updateCategoryLabels(category, isDiagonal) {
                 ${dim2Name}
             </div>
         `;
+    } else {
+        // Fallback per categorie non valide
+        categoryContainer.innerHTML = '';
     }
 }
 
@@ -181,14 +224,6 @@ function initializeDiagonalCells() {
         
         const dimension = rowHeader.textContent.trim();
         
-        // Assegna attributi per il dettaglio
-        const elements = Array.from(cell.querySelectorAll('li'))
-            .map(li => li.textContent.trim())
-            .join(', ');
-            
-        cell.setAttribute('data-title', `Dimensione ${dimension}`);
-        cell.setAttribute('data-description', `Elementi fondamentali dell'asse ${dimension}: ${elements}.`);
-        
         // Converti il nome italiano della dimensione in inglese per data-category
         let dimensionCode = dimension.toLowerCase();
         if (dimensionCode === 'diritto') dimensionCode = 'legal';
@@ -196,6 +231,13 @@ function initializeDiagonalCells() {
         if (dimensionCode === 'economia') dimensionCode = 'economy';
         if (dimensionCode === 'etica') dimensionCode = 'ethics';
         
+        // Assegna attributi per il dettaglio
+        const elements = Array.from(cell.querySelectorAll('li'))
+            .map(li => li.textContent.trim())
+            .join(', ');
+            
+        cell.setAttribute('data-title', `Dimensione ${dimension}`);
+        cell.setAttribute('data-description', `Elementi fondamentali dell'asse ${dimension}: ${elements}.`);
         cell.setAttribute('data-category', `${dimensionCode}-dimension`);
         cell.setAttribute('id', `${dimensionCode}-dimension`);
     });
@@ -212,24 +254,6 @@ function capitalizeFirst(string) {
 }
 
 /**
- * Formatta il nome della categoria in modo leggibile
- * @param {string} category - La categoria in formato tech-economy, legal-ethics, ecc.
- * @returns {string} - La categoria formattata con maiuscole e spazi
- */
-function formatCategoryName(category) {
-    if (!category) return '';
-    
-    // Dividi la categoria in parole
-    const parts = category.split('-');
-    
-    // Traduci le parti usando la funzione translateDimension
-    const formattedParts = parts.map(translateDimension);
-    
-    // Unisci le parole con uno spazio
-    return formattedParts.join(' - ');
-}
-
-/**
  * Aggiorna la visualizzazione grafica delle tensioni tra dimensioni
  * @param {string} category - La categoria della tensione (es. "tech-legal")
  */
@@ -238,7 +262,7 @@ function updateTensionVisualization(category) {
     if (!tensionViz) return;
     
     // Se è una cella diagonale, nascondi la visualizzazione
-    if (!category || category.endsWith('-dimension')) {
+    if (!category || !category.includes('-') || category.endsWith('-dimension')) {
         tensionViz.classList.add('hidden');
         return;
     }
