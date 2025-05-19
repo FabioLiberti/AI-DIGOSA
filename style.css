@@ -304,9 +304,9 @@ body {
     }
 
     /* .matrix-cell {
-        height: 180px; /* Aumentato da 150px */
-        padding: 12px; /* Padding maggiore */
-        font-size: 1rem; /* Testo leggermente più grande */
+    /*    height: 180px; /* Aumentato da 150px */
+    /*    padding: 12px; /* Padding maggiore */
+    /*    font-size: 1,0rem; /* Testo leggermente più grande */
     /* } */
 
 
@@ -359,5 +359,34 @@ body {
     .matrix-diagonal {
         cursor: pointer;
     }
+
+
+
+    /* Stili per etichette categoriche colorate */
+    .category-tech {
+        background-color: rgba(59, 130, 246, 0.1);
+        color: #3B82F6;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .category-economy {
+        background-color: rgba(16, 185, 129, 0.1);
+        color: #10B981;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .category-legal {
+        background-color: rgba(249, 115, 22, 0.1);
+        color: #F97316;
+        border: 1px solid rgba(249, 115, 22, 0.3);
+    }
+
+    .category-ethics {
+        background-color: rgba(139, 92, 246, 0.1);
+        color: #8B5CF6;
+        border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+
 
 }

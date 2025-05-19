@@ -34,14 +34,62 @@ function showMatrixDetail(cell) {
     const description = cell.getAttribute('data-description');
     const category = cell.getAttribute('data-category');
     
+    // Verifica se è una cella diagonale
+    const isDiagonal = cell.classList.contains('matrix-diagonal');
+    
     // Aggiorna il pannello di dettaglio
     document.getElementById('default-detail').classList.add('hidden');
     document.getElementById('detail-content').classList.remove('hidden');
     document.getElementById('detail-title').textContent = title;
     document.getElementById('detail-description').textContent = description;
     
-    // Verifica se è una cella diagonale o una cella di tensione
-    const isDiagonal = cell.classList.contains('matrix-diagonal');
+    // Ottieni il pannello di dettaglio
+    const detailPanel = document.getElementById('matrix-detail-panel');
+    
+    // Resetta lo stile precedente del pannello
+    detailPanel.style.backgroundColor = '';
+    detailPanel.classList.remove('border-blue-200');
+    
+    // Se è una cella diagonale, colora il pannello di azzurro e mostra i punti elenco
+    if (isDiagonal) {
+        // Colora il pannello di azzurro simile alle celle diagonali
+        detailPanel.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
+        detailPanel.classList.add('border-blue-200');
+        
+        // Crea un elemento per i punti elenco se non esiste
+        if (!document.getElementById('detail-list-container')) {
+            const listContainer = document.createElement('div');
+            listContainer.id = 'detail-list-container';
+            listContainer.className = 'mt-6 bg-white rounded-lg p-4 shadow-sm';
+            document.getElementById('detail-content').appendChild(listContainer);
+        }
+        
+        // Ottieni i punti elenco dalla cella diagonale
+        const listItems = cell.querySelectorAll('li');
+        const listContainer = document.getElementById('detail-list-container');
+        
+        // Aggiorna il contenuto del container con i punti elenco
+        if (listContainer && listItems.length > 0) {
+            listContainer.innerHTML = '<h4 class="font-semibold mb-3">Elementi principali:</h4>';
+            const ul = document.createElement('ul');
+            ul.className = 'list-disc pl-5 space-y-1';
+            
+            listItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item.textContent;
+                ul.appendChild(li);
+            });
+            
+            listContainer.appendChild(ul);
+            listContainer.classList.remove('hidden');
+        }
+    } else {
+        // Se non è una cella diagonale, nascondi il container dei punti elenco
+        const listContainer = document.getElementById('detail-list-container');
+        if (listContainer) {
+            listContainer.classList.add('hidden');
+        }
+    }
     
     // Aggiorna le etichette di categoria nel pannello laterale
     updateCategoryLabels(category, isDiagonal);
@@ -52,9 +100,7 @@ function showMatrixDetail(cell) {
     }
     
     // Aggiorna la visualizzazione delle tensioni se la funzione è disponibile
-    if (typeof updateTensionVisualization === 'function') {
-        updateTensionVisualization(category);
-    }
+    updateTensionVisualization(category);
 }
 
 /**
@@ -78,18 +124,11 @@ function updateCategoryLabels(category, isDiagonal) {
     const categoryContainer = document.getElementById('detail-category-container');
     if (!categoryContainer) return;
     
-    // Mappa di traduzione per i nomi delle dimensioni
-    const dimensionMap = {
-        'tech': 'Tecnologia',
-        'economy': 'Economia',
-        'legal': 'Diritto',
-        'ethics': 'Etica'
-    };
-    
     if (isDiagonal) {
         // Per celle diagonali, mostra una singola etichetta
         const dimension = category.split('-')[0];
-        const dimensionName = dimensionMap[dimension] || capitalizeFirst(dimension);
+        const dimensionName = translateDimension(dimension);
+        
         categoryContainer.innerHTML = `
             <div class="inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 category-${dimension}">
                 ${dimensionName}
@@ -98,8 +137,8 @@ function updateCategoryLabels(category, isDiagonal) {
     } else {
         // Per celle di tensione, estrai le due dimensioni
         const [dim1, dim2] = category ? category.split('-') : ['', ''];
-        const dim1Name = dimensionMap[dim1] || capitalizeFirst(dim1);
-        const dim2Name = dimensionMap[dim2] || capitalizeFirst(dim2);
+        const dim1Name = translateDimension(dim1);
+        const dim2Name = translateDimension(dim2);
         
         // Crea due etichette distinte con i colori appropriati
         categoryContainer.innerHTML = `
@@ -111,6 +150,22 @@ function updateCategoryLabels(category, isDiagonal) {
             </div>
         `;
     }
+}
+
+/**
+ * Traduce il nome della dimensione dall'inglese all'italiano
+ * @param {string} dimension - Nome della dimensione in inglese (tech, economy, legal, ethics)
+ * @returns {string} - Nome della dimensione tradotto
+ */
+function translateDimension(dimension) {
+    const dimensionMap = {
+        'tech': 'Tecnologia',
+        'economy': 'Economia', 
+        'legal': 'Diritto',
+        'ethics': 'Etica'
+    };
+    
+    return dimensionMap[dimension] || capitalizeFirst(dimension);
 }
 
 /**
@@ -133,10 +188,16 @@ function initializeDiagonalCells() {
             
         cell.setAttribute('data-title', `Dimensione ${dimension}`);
         cell.setAttribute('data-description', `Elementi fondamentali dell'asse ${dimension}: ${elements}.`);
-        cell.setAttribute('data-category', `${dimension.toLowerCase()}-dimension`);
         
-        // Assegna un ID univoco
-        cell.setAttribute('id', `${dimension.toLowerCase()}-dimension`);
+        // Converti il nome italiano della dimensione in inglese per data-category
+        let dimensionCode = dimension.toLowerCase();
+        if (dimensionCode === 'diritto') dimensionCode = 'legal';
+        if (dimensionCode === 'tecnologia') dimensionCode = 'tech';
+        if (dimensionCode === 'economia') dimensionCode = 'economy';
+        if (dimensionCode === 'etica') dimensionCode = 'ethics';
+        
+        cell.setAttribute('data-category', `${dimensionCode}-dimension`);
+        cell.setAttribute('id', `${dimensionCode}-dimension`);
     });
 }
 
@@ -158,19 +219,11 @@ function capitalizeFirst(string) {
 function formatCategoryName(category) {
     if (!category) return '';
     
-    // Mappa di traduzione per i nomi delle dimensioni
-    const dimensionMap = {
-        'tech': 'Tecnologia',
-        'economy': 'Economia',
-        'legal': 'Diritto',
-        'ethics': 'Etica'
-    };
-    
     // Dividi la categoria in parole
     const parts = category.split('-');
     
-    // Traduci le parti se possibile, altrimenti capitalizza
-    const formattedParts = parts.map(part => dimensionMap[part] || capitalizeFirst(part));
+    // Traduci le parti usando la funzione translateDimension
+    const formattedParts = parts.map(translateDimension);
     
     // Unisci le parole con uno spazio
     return formattedParts.join(' - ');
@@ -210,21 +263,13 @@ function updateTensionVisualization(category) {
         'ethics': 'bg-purple-600'
     };
     
-    // Mappa di traduzione per i nomi delle dimensioni
-    const dimensionMap = {
-        'tech': 'Tecnologia',
-        'economy': 'Economia',
-        'legal': 'Diritto',
-        'ethics': 'Etica'
-    };
-    
     // Aggiorna cerchio sinistro
     leftCircle.className = `w-20 h-20 rounded-full flex items-center justify-center text-white font-medium ${colorMap[dim1] || 'bg-gray-600'}`;
-    leftCircle.textContent = dimensionMap[dim1] || capitalizeFirst(dim1);
+    leftCircle.textContent = translateDimension(dim1);
     
     // Aggiorna cerchio destro
     rightCircle.className = `w-20 h-20 rounded-full flex items-center justify-center text-white font-medium ${colorMap[dim2] || 'bg-gray-600'}`;
-    rightCircle.textContent = dimensionMap[dim2] || capitalizeFirst(dim2);
+    rightCircle.textContent = translateDimension(dim2);
     
     // Descrizione della tensione (personalizzata in base alle dimensioni)
     const tensionDescriptions = {
@@ -244,8 +289,11 @@ function updateTensionVisualization(category) {
     
     const descElement = document.getElementById('tension-description');
     if (descElement) {
+        const dim1Name = translateDimension(dim1);
+        const dim2Name = translateDimension(dim2);
+        
         descElement.textContent = 
             tensionDescriptions[category] || 
-            `Questa tensione richiede un bilanciamento attento tra ${dimensionMap[dim1] || dim1} e ${dimensionMap[dim2] || dim2}.`;
+            `Questa tensione richiede un bilanciamento attento tra ${dim1Name} e ${dim2Name}.`;
     }
 }
