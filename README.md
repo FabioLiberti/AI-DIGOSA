@@ -128,7 +128,7 @@ Informazioni aggiornate su programma, registrazione e logistica sono disponibili
 | Tecnologica | *Vittorio Stile*, *Universitas Mercatorum* | Digital transformation, Blockchain, UX Designer | Analisi sicurezza |
 | Etica       | *Nunzia Cosimo*, *Universitas Mercatorum* | Etica dell'AI, Bioetica | Analisi bias, autonomia decisionale |
 | Economica   | *Fracesco Avolio*, *Universitas Mercatorum* | Value Management, Economia Sanitaria | Analisi costi‑benefici, modelli di sostenibilità |
-| Giuridica   | *Alfonso Laudonia e Vito ...*, *Universitas Mercatorum* | Diritto AI, GDPR, Normativa Sanitaria | Analisi quadro normativo, compliance |
+| Giuridica   | *Alfonso Laudonia e Vito Cicoira*, *Universitas Mercatorum* | Diritto AI, GDPR, Normativa Sanitaria | Analisi quadro normativo, compliance |
 
 ---
 
