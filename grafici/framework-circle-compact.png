@@ -1,0 +1,103 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradienti per i quadranti -->
+    <linearGradient id="tech-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.1" />
+    </linearGradient>
+    <linearGradient id="econ-gradient" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.1" />
+    </linearGradient>
+    <linearGradient id="legal-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0.1" />
+    </linearGradient>
+    <linearGradient id="ethics-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Cerchio esterno e interno -->
+  <circle cx="250" cy="250" r="240" fill="none" stroke="#e5e7eb" stroke-width="1" />
+  <circle cx="250" cy="250" r="200" fill="none" stroke="#e5e7eb" stroke-width="1" />
+  <circle cx="250" cy="250" r="160" fill="none" stroke="#e5e7eb" stroke-width="1" />
+  <circle cx="250" cy="250" r="120" fill="none" stroke="#e5e7eb" stroke-width="1" />
+  <circle cx="250" cy="250" r="80" fill="none" stroke="#e5e7eb" stroke-width="1" />
+  <circle cx="250" cy="250" r="40" fill="none" stroke="#e5e7eb" stroke-width="1" />
+  
+  <!-- Assi principali -->
+  <line x1="250" y1="10" x2="250" y2="490" stroke="#d1d5db" stroke-width="2" />
+  <line x1="10" y1="250" x2="490" y2="250" stroke="#d1d5db" stroke-width="2" />
+  <line x1="72" y1="72" x2="428" y2="428" stroke="#d1d5db" stroke-width="1" stroke-dasharray="5,5" />
+  <line x1="428" y1="72" x2="72" y2="428" stroke="#d1d5db" stroke-width="1" stroke-dasharray="5,5" />
+  
+  <!-- Quadranti colorati -->
+  <path d="M 250 250 L 250 50 A 200 200 0 0 1 450 250 Z" fill="url(#tech-gradient)" />
+  <path d="M 250 250 L 450 250 A 200 200 0 0 1 250 450 Z" fill="url(#econ-gradient)" />
+  <path d="M 250 250 L 250 450 A 200 200 0 0 1 50 250 Z" fill="url(#legal-gradient)" />
+  <path d="M 250 250 L 50 250 A 200 200 0 0 1 250 50 Z" fill="url(#ethics-gradient)" />
+  
+  <!-- Punti sugli assi -->
+  <!-- Tecnologia (alto) -->
+  <circle cx="250" cy="50" r="10" fill="#3b82f6" />
+  <text x="250" y="30" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6" text-anchor="middle">TECNOLOGIA</text>
+  
+  <!-- Economia (destra) -->
+  <circle cx="450" cy="250" r="10" fill="#10b981" />
+  <text x="470" y="250" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#10b981" text-anchor="start" dominant-baseline="middle">ECONOMIA</text>
+  
+  <!-- Diritto (basso) -->
+  <circle cx="250" cy="450" r="10" fill="#f97316" />
+  <text x="250" y="475" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f97316" text-anchor="middle">DIRITTO</text>
+  
+  <!-- Etica (sinistra) -->
+  <circle cx="50" cy="250" r="10" fill="#8b5cf6" />
+  <text x="30" y="250" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#8b5cf6" text-anchor="end" dominant-baseline="middle">ETICA</text>
+  
+  <!-- Elementi del framework in ogni quadrante -->
+  <!-- Tecnologia (alto-destra) -->
+  <circle cx="330" cy="170" r="8" fill="#3b82f6" opacity="0.7" />
+  <text x="345" y="170" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6" dominant-baseline="middle">Interoperabilità</text>
+  
+  <circle cx="370" cy="130" r="8" fill="#3b82f6" opacity="0.7" />
+  <text x="385" y="130" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6" dominant-baseline="middle">Sicurezza</text>
+  
+  <!-- Economia (basso-destra) -->
+  <circle cx="330" cy="330" r="8" fill="#10b981" opacity="0.7" />
+  <text x="345" y="330" font-family="Arial, sans-serif" font-size="10" fill="#10b981" dominant-baseline="middle">Sostenibilità</text>
+  
+  <circle cx="370" cy="370" r="8" fill="#10b981" opacity="0.7" />
+  <text x="385" y="370" font-family="Arial, sans-serif" font-size="10" fill="#10b981" dominant-baseline="middle">Efficienza</text>
+  
+  <!-- Diritto (basso-sinistra) -->
+  <circle cx="170" cy="330" r="8" fill="#f97316" opacity="0.7" />
+  <text x="155" y="330" font-family="Arial, sans-serif" font-size="10" fill="#f97316" text-anchor="end" dominant-baseline="middle">Compliance</text>
+  
+  <circle cx="130" cy="370" r="8" fill="#f97316" opacity="0.7" />
+  <text x="115" y="370" font-family="Arial, sans-serif" font-size="10" fill="#f97316" text-anchor="end" dominant-baseline="middle">Responsabilità</text>
+  
+  <!-- Etica (alto-sinistra) -->
+  <circle cx="170" cy="170" r="8" fill="#8b5cf6" opacity="0.7" />
+  <text x="155" y="170" font-family="Arial, sans-serif" font-size="10" fill="#8b5cf6" text-anchor="end" dominant-baseline="middle">Equità</text>
+  
+  <circle cx="130" cy="130" r="8" fill="#8b5cf6" opacity="0.7" />
+  <text x="115" y="130" font-family="Arial, sans-serif" font-size="10" fill="#8b5cf6" text-anchor="end" dominant-baseline="middle">Trasparenza</text>
+  
+  <!-- Centro -->
+  <circle cx="250" cy="250" r="35" fill="white" stroke="#e5e7eb" stroke-width="2" />
+  <text x="250" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937" text-anchor="middle">AI</text>
+  <text x="250" y="260" font-family="Arial, sans-serif" font-size="10" fill="#4b5563" text-anchor="middle">Distribuita</text>
+  
+  <!-- Punti progetti -->
+  <circle cx="350" cy="180" r="6" fill="#2563eb" stroke="white" stroke-width="1" />
+  <circle cx="380" cy="280" r="6" fill="#059669" stroke="white" stroke-width="1" />
+  <circle cx="180" cy="350" r="6" fill="#ea580c" stroke="white" stroke-width="1" />
+  
+  <!-- Connessioni tra dimensioni -->
+  <path d="M 170 170 C 205 205, 295 205, 330 170" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="2,2" />
+  <path d="M 330 330 C 295 295, 295 205, 330 170" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="2,2" />
+  <path d="M 170 330 C 205 295, 295 295, 330 330" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="2,2" />
+  <path d="M 170 170 C 205 205, 205 295, 170 330" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="2,2" />
+</svg>
