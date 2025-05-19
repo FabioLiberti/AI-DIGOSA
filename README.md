@@ -126,9 +126,9 @@ Informazioni aggiornate su programma, registrazione e logistica sono disponibili
 | Tecnologica | *Fabio Liberti*, *Universitas Mercatorum* | Federated Learning, Edge Computing, Informatica Sanitaria | Framework tecnologico, analisi sicurezza e scalabilità |
 | Tecnologica | *Franco Maciariello*, *Universitas Mercatorum* | Applied AI, Digital transformation, Interoperabilità | Analisi digitalizzazione |
 | Tecnologica | *Vittorio Stile*, *Universitas Mercatorum* | Digital transformation, Blockchain, UX Designer | Analisi sicurezza |
+| Etica       | *Nunzia Cosimo* – *Universitas Mercatorum* | Etica dell'AI, Bioetica | Analisi bias, autonomia decisionale |
 | Economica   | *Fracesco Avolio*, *Universitas Mercatorum* | Value Management, Economia Sanitaria | Analisi costi‑benefici, modelli di sostenibilità |
 | Giuridica   | *Alfonso Laudonia e Vito ...*, *Universitas Mercatorum* | Diritto AI, GDPR, Normativa Sanitaria | Analisi quadro normativo, compliance |
-| Etica       | *Nunzia Cosimo* – *Universitas Mercatorum* | Etica dell'AI, Bioetica | Analisi bias, autonomia decisionale |
 
 ---
 
