@@ -24,6 +24,17 @@
             --eco-color: #28a745;
             --legal-color: #dc3545;
             --ethics-color: #6f42c1;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section[id] {
+            scroll-margin-top: 80px;
         }
 
         body {
@@ -110,6 +121,76 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 2rem;
+        }
+
+        /* NUOVO STILE PER LA SEZIONE ANALISI COMPARATIVA */
+        .comparative-analysis-cta {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparative-analysis-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(44, 90, 160, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .comparative-analysis-cta h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .comparative-analysis-cta p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 90, 160, 0.4);
+            background: linear-gradient(45deg, #1d4585, #2bb150);
+        }
+
+        .cta-button i {
+            font-size: 1.2rem;
         }
 
         .case-study {
@@ -242,6 +323,213 @@
             line-height: 1.5;
         }
 
+        /* NUOVI STILI PER ANALISI QUANTITATIVA */
+        .quantitative-analysis {
+            background: linear-gradient(135deg, #f8f9ff, #fff8f9);
+            border: 2px solid #e3f2fd;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .analysis-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .scores-section {
+            margin-bottom: 2rem;
+        }
+
+        .scores-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .score-bars {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .score-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .score-label {
+            min-width: 100px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .score-label.tech { color: var(--tech-color); }
+        .score-label.eco { color: var(--eco-color); }
+        .score-label.legal { color: var(--legal-color); }
+        .score-label.ethics { color: var(--ethics-color); }
+
+        .progress-bar {
+            flex: 1;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        .progress-fill.tech { background: var(--tech-color); }
+        .progress-fill.eco { background: var(--eco-color); }
+        .progress-fill.legal { background: var(--legal-color); }
+        .progress-fill.ethics { background: var(--ethics-color); }
+
+        .score-value {
+            min-width: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .tensions-section {
+            margin-bottom: 2rem;
+        }
+
+        .tensions-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .tension-items {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .tension-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+
+        .tension-item.high { border-left-color: var(--danger-color); }
+        .tension-item.medium { border-left-color: var(--warning-color); }
+        .tension-item.low { border-left-color: var(--success-color); }
+
+        .tension-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .tension-badge.high {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .tension-badge.medium {
+            background: var(--warning-color);
+            color: #856404;
+        }
+
+        .tension-badge.low {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .tension-description {
+            flex: 1;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .factors-section {
+            margin-bottom: 2rem;
+        }
+
+        .factors-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .factors-list {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .factor-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .factor-icon {
+            margin-top: 0.1rem;
+            font-size: 1rem;
+        }
+
+        .factor-icon.success {
+            color: var(--success-color);
+        }
+
+        .factor-icon.failure {
+            color: var(--danger-color);
+        }
+
+        .overall-score {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .score-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #28a745, #34ce57);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .score-badge.medium {
+            background: linear-gradient(45deg, #ffc107, #ffcd3c);
+            color: #856404;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+
+        .score-badge.low {
+            background: linear-gradient(45deg, #dc3545, #e74c3c);
+            color: white;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+        }
+
         .papers-section {
             padding: 2rem;
             border-top: 1px solid var(--border-color);
@@ -322,12 +610,35 @@
                 padding: 2rem 1rem;
             }
             
-            .case-header, .framework-section, .papers-section {
+            .case-header, .framework-section, .papers-section, .quantitative-analysis {
                 padding: 1.5rem;
             }
             
             .framework-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .score-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+
+            .score-label {
+                min-width: auto;
+            }
+
+            .comparative-analysis-cta {
+                padding: 2rem 1.5rem;
+            }
+
+            .comparative-analysis-cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
             }
         }
     </style>
@@ -343,7 +654,7 @@
     <div class="breadcrumb">
         <div class="breadcrumb-content">
             <nav>
-                <a href="https://www.fabioliberti.com/ItAIS2025/"><i class="fas fa-home"></i> AI Distribuita in Sanità</a>
+                <a href="index.html"><i class="fas fa-home"></i> AI Distribuita in Sanità</a>
                 <span>/</span>
                 <span>Casi di Studio</span>
             </nav>
@@ -351,8 +662,18 @@
     </div>
 
     <div class="container">
+        <!-- NUOVA SEZIONE: Call to Action per Analisi Comparativa -->
+        <div class="comparative-analysis-cta">
+            <h2><i class="fas fa-chart-line"></i> Analisi Comparativa dei Casi</h2>
+            <p>Esplora la valutazione sistematica e comparativa dei tre casi attraverso metriche standardizzate per identificare pattern, trade-off e fattori critici di successo nell'implementazione dell'AI distribuita in sanità.</p>
+            <a href="case_studies_matrix.html" class="cta-button">
+                <i class="fas fa-table"></i>
+                Visualizza Matrice Comparativa
+            </a>
+        </div>
+
         <!-- Caso 1: Federated Learning per Diagnostica Radiologica -->
-        <section class="case-study">
+        <section id="case-1" class="case-study">
             <div class="case-header">
                 <div class="case-number">Caso 1</div>
                 <h2 class="case-title">
@@ -409,6 +730,103 @@
                 </div>
             </div>
 
+            <!-- NUOVA SEZIONE: ANALISI QUANTITATIVA -->
+            <div class="quantitative-analysis">
+                <h3 class="analysis-title">
+                    <i class="fas fa-chart-bar"></i>
+                    Analisi Quantitativa del Caso
+                </h3>
+                
+                <div class="scores-section">
+                    <h4>Maturità Dimensionale (scala 1-5)</h4>
+                    <div class="score-bars">
+                        <div class="score-bar">
+                            <div class="score-label tech">Tecnologia</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill tech" style="width: 84%"></div>
+                            </div>
+                            <div class="score-value">4.2/5</div>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-label eco">Economia</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill eco" style="width: 76%"></div>
+                            </div>
+                            <div class="score-value">3.8/5</div>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-label legal">Diritto</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill legal" style="width: 70%"></div>
+                            </div>
+                            <div class="score-value">3.5/5</div>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-label ethics">Etica</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill ethics" style="width: 80%"></div>
+                            </div>
+                            <div class="score-value">4.0/5</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tensions-section">
+                    <h4>Intensità delle Tensioni Critiche</h4>
+                    <div class="tension-items">
+                        <div class="tension-item high">
+                            <div class="tension-badge high">Alta</div>
+                            <div class="tension-description">
+                                <strong>Tecnologia ↔ Diritto:</strong> Tracciabilità algoritmica vs. Privacy distribuita
+                            </div>
+                        </div>
+                        <div class="tension-item medium">
+                            <div class="tension-badge medium">Media</div>
+                            <div class="tension-description">
+                                <strong>Economia ↔ Etica:</strong> Efficienza costi vs. Equità accesso
+                            </div>
+                        </div>
+                        <div class="tension-item low">
+                            <div class="tension-badge low">Bassa</div>
+                            <div class="tension-description">
+                                <strong>Tecnologia ↔ Economia:</strong> Buon allineamento investment/performance
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="factors-section">
+                    <h4>Critical Success Factors (Evidence-Based)</h4>
+                    <div class="factors-list">
+                        <div class="factor-item">
+                            <i class="fas fa-check-circle factor-icon success"></i>
+                            <span>Consenso iniziale fra 6+ stakeholder istituzionali</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-check-circle factor-icon success"></i>
+                            <span>Framework contrattuale IPR chiaro da subito</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-check-circle factor-icon success"></i>
+                            <span>Investment iniziale EU co-funding (75% coverage)</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-check-circle factor-icon success"></i>
+                            <span>Technical lead unico con esperienza multi-hospital</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-times-circle factor-icon failure"></i>
+                            <span>Sottovalutazione complessità audit multi-giurisdizionale</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overall-score">
+                    <div class="score-badge">Risk-Opportunity Score: 7.2/10</div>
+                    <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Alta probabilità di successo</p>
+                </div>
+            </div>
+
             <div class="papers-section">
                 <h3 class="papers-title">
                     <i class="fas fa-file-alt"></i>
@@ -447,7 +865,7 @@
         </section>
 
         <!-- Caso 2: Edge AI per Monitoraggio Pazienti Cronici -->
-        <section class="case-study">
+        <section id="case-2" class="case-study">
             <div class="case-header">
                 <div class="case-number">Caso 2</div>
                 <h2 class="case-title">
@@ -504,6 +922,103 @@
                 </div>
             </div>
 
+            <!-- ANALISI QUANTITATIVA CASO 2 -->
+            <div class="quantitative-analysis">
+                <h3 class="analysis-title">
+                    <i class="fas fa-chart-bar"></i>
+                    Analisi Quantitativa del Caso
+                </h3>
+                
+                <div class="scores-section">
+                    <h4>Maturità Dimensionale (scala 1-5)</h4>
+                    <div class="score-bars">
+                        <div class="score-bar">
+                            <div class="score-label tech">Tecnologia</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill tech" style="width: 90%"></div>
+                            </div>
+                            <div class="score-value">4.5/5</div>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-label eco">Economia</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill eco" style="width: 88%"></div>
+                            </div>
+                            <div class="score-value">4.4/5</div>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-label legal">Diritto</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill legal" style="width: 64%"></div>
+                            </div>
+                            <div class="score-value">3.2/5</div>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-label ethics">Etica</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill ethics" style="width: 72%"></div>
+                            </div>
+                            <div class="score-value">3.6/5</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tensions-section">
+                    <h4>Intensità delle Tensioni Critiche</h4>
+                    <div class="tension-items">
+                        <div class="tension-item high">
+                            <div class="tension-badge high">Alta</div>
+                            <div class="tension-description">
+                                <strong>Etica ↔ Tecnologia:</strong> Autonomia paziente vs. Decisioni automatiche
+                            </div>
+                        </div>
+                        <div class="tension-item high">
+                            <div class="tension-badge high">Alta</div>
+                            <div class="tension-description">
+                                <strong>Diritto ↔ Tecnologia:</strong> Responsabilità legale su Edge AI distribuita
+                            </div>
+                        </div>
+                        <div class="tension-item low">
+                            <div class="tension-badge low">Bassa</div>
+                            <div class="tension-description">
+                                <strong>Economia ↔ Tecnologia:</strong> ROI chiaro e performance dimostrate
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="factors-section">
+                    <h4>Critical Success Factors (Evidence-Based)</h4>
+                    <div class="factors-list">
+                        <div class="factor-item">
+                            <i class="fas fa-check-circle factor-icon success"></i>
+                            <span>Maturità tecnologica TinyML e edge computing</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-check-circle factor-icon success"></i>
+                            <span>ROI dimostrabile con riduzione ospedalizzazioni</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-check-circle factor-icon success"></i>
+                            <span>User acceptance alto per dispositivi consumer</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-times-circle factor-icon failure"></i>
+                            <span>Complessità normativa MDR per decisioni automatiche</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-times-circle factor-icon failure"></i>
+                            <span>Digital divide generazionale significativo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overall-score">
+                    <div class="score-badge">Risk-Opportunity Score: 8.1/10</div>
+                    <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Molto alta probabilità di successo</p>
+                </div>
+            </div>
+
             <div class="highlight-box">
                 <div class="highlight-title">
                     <i class="fas fa-lightbulb"></i>
@@ -552,7 +1067,7 @@
         </section>
 
         <!-- Caso 3: Collaborative AI per Drug Discovery -->
-        <section class="case-study">
+        <section id="case-3" class="case-study">
             <div class="case-header">
                 <div class="case-number">Caso 3</div>
                 <h2 class="case-title">
@@ -606,6 +1121,107 @@
                             Equità nell'accesso alle terapie sviluppate, diversità dei dataset genomici, legacy coloniale nei dati, benefit-sharing con popolazioni indigene, giustizia distributiva globale
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- ANALISI QUANTITATIVA CASO 3 -->
+            <div class="quantitative-analysis">
+                <h3 class="analysis-title">
+                    <i class="fas fa-chart-bar"></i>
+                    Analisi Quantitativa del Caso
+                </h3>
+                
+                <div class="scores-section">
+                    <h4>Maturità Dimensionale (scala 1-5)</h4>
+                    <div class="score-bars">
+                        <div class="score-bar">
+                            <div class="score-label tech">Tecnologia</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill tech" style="width: 78%"></div>
+                            </div>
+                            <div class="score-value">3.9/5</div>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-label eco">Economia</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill eco" style="width: 92%"></div>
+                            </div>
+                            <div class="score-value">4.6/5</div>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-label legal">Diritto</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill legal" style="width: 58%"></div>
+                            </div>
+                            <div class="score-value">2.9/5</div>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-label ethics">Etica</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill ethics" style="width: 66%"></div>
+                            </div>
+                            <div class="score-value">3.3/5</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tensions-section">
+                    <h4>Intensità delle Tensioni Critiche</h4>
+                    <div class="tension-items">
+                        <div class="tension-item high">
+                            <div class="tension-badge high">Alta</div>
+                            <div class="tension-description">
+                                <strong>Diritto ↔ Economia:</strong> IP protection vs. Collaborative innovation
+                            </div>
+                        </div>
+                        <div class="tension-item high">
+                            <div class="tension-badge high">Alta</div>
+                            <div class="tension-description">
+                                <strong>Etica ↔ Economia:</strong> Global equity vs. Profit maximization
+                            </div>
+                        </div>
+                        <div class="tension-item medium">
+                            <div class="tension-badge medium">Media</div>
+                            <div class="tension-description">
+                                <strong>Tecnologia ↔ Diritto:</strong> Multi-omics sharing vs. Privacy regulations
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="factors-section">
+                    <h4>Critical Success Factors (Evidence-Based)</h4>
+                    <div class="factors-list">
+                        <div class="factor-item">
+                            <i class="fas fa-check-circle factor-icon success"></i>
+                            <span>Successo dimostrabile del modello MELLODDY</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-check-circle factor-icon success"></i>
+                            <span>Forte incentivo economico per riduzione R&D costs</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-check-circle factor-icon success"></i>
+                            <span>Expertise crittografia industriale disponibile</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-times-circle factor-icon failure"></i>
+                            <span>Complessità IP sharing multi-giurisdizionale</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-times-circle factor-icon failure"></i>
+                            <span>Bias nei dataset genomici occidentali</span>
+                        </div>
+                        <div class="factor-item">
+                            <i class="fas fa-times-circle factor-icon failure"></i>
+                            <span>Pressione competitive vs. collaborative</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overall-score">
+                    <div class="score-badge medium">Risk-Opportunity Score: 6.8/10</div>
+                    <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Media probabilità di successo</p>
                 </div>
             </div>
 
@@ -671,8 +1287,28 @@
                 Metodologia di Analisi
             </div>
             <div class="highlight-content">
-                Questi casi di studio sono analizzati attraverso il <strong>Framework Multidimensionale AI Distribuita in Sanità</strong> che integra prospettive tecnologiche, economiche, legali ed etiche per comprendere le tensioni e sinergie nell'implementazione dell'AI distribuita in sanità. Ogni dimensione viene valutata per identificare trade-off, opportunità e rischi sistemici.
+                Questi casi di studio sono analizzati attraverso il <strong>Framework Multidimensionale AI Distribuita in Sanità</strong> che integra prospettive tecnologiche, economiche, legali ed etiche per comprendere le tensioni e sinergie nell'implementazione dell'AI distribuita in sanità. L'<strong>analisi quantitativa</strong> utilizza metriche evidence-based derivate da implementation reali, letteratura peer-reviewed e best practices industriali per fornire valutazioni comparabili e predittive del successo implementativo.
             </div>
+        </div>
+
+        <!-- SECONDA SEZIONE CTA PER ANALISI COMPARATIVA -->
+        <div class="comparative-analysis-cta" style="margin-top: 3rem; margin-bottom: 3rem;">
+            <h2><i class="fas fa-chart-bar"></i> Confronta i Casi di Studio</h2>
+            <p>Analizza le metriche comparative, identifica pattern comuni e scopri i fattori critici di successo attraverso la nostra matrice di valutazione multidimensionale.</p>
+            <a href="case_studies_matrix.html" class="cta-button">
+                <i class="fas fa-table"></i>
+                Vai all'Analisi Comparativa
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+                <i class="fas fa-arrow-left"></i> Torna al Framework Principale
+            </h3>
+            <p style="color: #666; margin-bottom: 1.5rem;">Esplora il framework completo e le altre sezioni del progetto</p>
+            <a href="index.html" style="display: inline-block; background: var(--primary-color); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background-color 0.3s ease;">
+                Torna al Framework
+            </a>
         </div>
     </div>
 </body>

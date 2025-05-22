@@ -1,0 +1,120 @@
+/* Stili per header compatti dei casi di studio */
+.case-study-compact {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 3rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-study-compact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.case-header-compact {
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1.5rem;
+    border-left: 5px solid var(--primary-color);
+    background: white;
+}
+
+.case-header-compact .case-number {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.case-header-compact .case-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+.case-header-compact .case-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.case-title-compact {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    line-height: 1.3;
+}
+
+.case-description-compact {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Varianti per diversi casi */
+.case-study-compact#case-1 .case-header-compact {
+    border-left-color: var(--tech-color);
+}
+
+.case-study-compact#case-1 .case-number {
+    background: var(--tech-color);
+}
+
+.case-study-compact#case-2 .case-header-compact {
+    border-left-color: var(--eco-color);
+}
+
+.case-study-compact#case-2 .case-number {
+    background: var(--eco-color);
+}
+
+.case-study-compact#case-3 .case-header-compact {
+    border-left-color: var(--accent-color);
+}
+
+.case-study-compact#case-3 .case-number {
+    background: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .case-header-compact {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .case-header-compact .case-number {
+        align-self: center;
+    }
+    
+    .case-header-compact .case-icon {
+        align-self: center;
+        margin-top: 0;
+    }
+    
+    .case-title-compact {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .case-description-compact {
+        text-align: center;
+    }
+}
